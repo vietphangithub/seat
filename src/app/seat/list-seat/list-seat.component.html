@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+      <a class="nav-link" routerLink="/coffee-list-seat/{{coffeeID}}" routerLinkActive="active">
+          Đang chờ</a
+        >
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/coffee-list-seat-done/{{coffeeID}}" routerLinkActive="active">
+          Đã giao</a
+        >
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+
+<div class="pricing-header mx-auto">
+  <div class="panel-heading">
+    <h3 class="panel-title text-center">Danh sách vị trí ngồi</h3>
+  </div>
+  <div class="table-responsive">
+    <table
+      class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg"
+    >
+      <thead>
+        <tr class="text-center">
+          <th scope="col">Số thẻ</th>
+          <th scope="col">Vị trí ngồi</th>
+          <th scope="col">Trạng thái</th>
+          <th scope="col">Ngày</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let seat of seats">
+          <td>{{ seat.cardCode }}</td>
+          <td>{{ seat.visiting }}</td>
+          <td>
+            <b *ngIf="seat.status == 0" style="color: green">Đang chờ</b>
+            <b *ngIf="seat.status == 1" style="color: green">Đã giao</b>
+          </td>
+          <td>{{ seat.orderedDate }}</td>
+          <td>
+            <button (click) = "onDone(seat)" type="button" class="btn btn-warning btn-circle btn-lg fa fa-check">
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

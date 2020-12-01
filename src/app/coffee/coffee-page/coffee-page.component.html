@@ -1,0 +1,11 @@
+<!-- <app-coffee></app-coffee> -->
+<!-- <app-list-coffee></app-list-coffee> -->
+
+<div class="row">
+  <div class="col-sm-6">
+    <app-coffee [deliverCoffee]="deliverCoffee"></app-coffee>
+  </div>
+  <div class="col-sm-6">
+    <app-list-coffee (messageEvent)="getDataCoffee($event)"></app-list-coffee>
+  </div>
+</div>
