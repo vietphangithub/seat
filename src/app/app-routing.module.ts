@@ -26,6 +26,7 @@ const routes: Routes = [
 ];
 
 
+
 // Import RouterModule and inject routes array in it and dont forget to export the RouterModule
 @NgModule({
   imports: [CommonModule,RouterModule.forRoot(routes)],
